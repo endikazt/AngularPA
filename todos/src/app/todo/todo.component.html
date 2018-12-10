@@ -1,3 +1,15 @@
-<p>
-  todo works!
-</p>
+<div style="text-align:center"> 
+  <input type="text" [(ngModel)]="todo.tarea">
+  <button (click)="addTodo()"> Crear tarea </button>
+</div>
+<div style="text-align:center">
+    <label for="importante">Importante</label>
+    <input id="importante" type="checkbox" [(ngModel)]="todo.importante"> 
+</div>
+<div style="text-align:center">
+  <ul>
+    <li *ngFor="let todo of todos" (click)="finish(todo)" [ngClass]="setTodoClass(todo)">
+      {{todo.tarea}}
+    </li>
+  </ul>
+</div>
