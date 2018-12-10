@@ -5,12 +5,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
+import { PriorizarTodosTerminadoPipe } from './pipes/priorizar-todos-terminado.pipe';
+import { TodosTerminadosPipe } from './pipes/todos-terminados.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoComponent
+    TodoComponent,
+    PriorizarTodosTerminadoPipe,
+    TodosTerminadosPipe
   ],
   imports: [
     BrowserModule,

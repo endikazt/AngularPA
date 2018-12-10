@@ -25,9 +25,9 @@ export class TodoComponent implements OnInit {
     this.todo = new Todo("", false, false);
   }
 
-  finish(todo:Todo)
+  cambiarEstado(todo:Todo)
   {
-    todo.terminada = true;
+    todo.terminada = !todo.terminada;
   }
 
   setTodoClass(todo:Todo): Array<string>

@@ -7,8 +7,19 @@
     <input id="importante" type="checkbox" [(ngModel)]="todo.importante"> 
 </div>
 <div style="text-align:center">
+  <hr/>
+  <h1 style="text-align: center"> Tareas pendientes</h1>
   <ul>
-    <li *ngFor="let todo of todos" (click)="finish(todo)" [ngClass]="setTodoClass(todo)">
+    <li *ngFor="let todo of todos | priorizarTodosTerminado" (click)="cambiarEstado(todo)" [ngClass]="setTodoClass(todo)">
+      {{todo.tarea}}
+    </li>
+  </ul>
+</div>
+<div style="text-align:center" *ngIf="(todos | todosTerminados).lenght > 0">
+<hr/>
+<h1 style="text-align: center"> Tareas terminadas</h1>
+  <ul>
+    <li *ngFor="let todo of todos | todosTerminados" (click)="cambiarEstado(todo)" [ngClass]="setTodoClass(todo)">
       {{todo.tarea}}
     </li>
   </ul>
